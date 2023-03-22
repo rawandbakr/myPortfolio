@@ -45,7 +45,7 @@ const Contact = () => {
         <button type="submit" className="bg-black text-white py-2 px-4 rounded hover:bg-gray-800">Submit</button>
       </form>
       <Toaster
-        position="top-center"
+        position="bottom-left"
         reverseOrder={false}
       />
     </div>
