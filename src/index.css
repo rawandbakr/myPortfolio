@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* body{
+    background-image: url('https://images.pexels.com/photos/1169754/pexels-photo-1169754.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
