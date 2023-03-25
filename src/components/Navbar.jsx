@@ -4,6 +4,7 @@ import {TfiClose} from 'react-icons/tfi'
 import {FiGithub,FiLinkedin} from 'react-icons/fi'
 import { useState } from 'react'
 export default function Navbar() {
+
   const [toggle,setToggle]=useState(false)
   return (
     <div className="z-0 sticky top-0 flex justify-around w-full h-[100px]  text-white backdrop-filter backdrop-blur-sm bg-opacity-50 bg-black">
@@ -19,7 +20,7 @@ export default function Navbar() {
           </a>
         </div>
         {/* icon and name section  */}
-        <div className="flex justify-start p-3 items-center space-x-1 ">
+        <div className="flex justify-start p-3 items-center space-x-1 " onClick={()=>window.scrollTo(0, 0)} >
           <img src={rawand} className="rounded-full h-12" alt="." />
           <h1 className="font-bold text-xl">
             Rawand A.Ali
@@ -42,7 +43,7 @@ export default function Navbar() {
         }
         {toggle ?
           <div
-            className="absolute top-20 right-2 h-auto w-28 p-5 flex z-10 rounded-md  text-white bg-bgHero bg-cover"
+            className="absolute top-[110px] right-2 h-auto w-28 p-5 flex z-10 rounded-md  text-white bg-bgHero bg-cover"
             onClick={() => setToggle(false)}>
             <div className="flex flex-col space-y-3 ">
               <a href="">ABOUT</a>

@@ -32,7 +32,7 @@ const Contact = () => {
     <div className='max-h-max w-full p-5 flex flex-col text-black'>
       <h1 className="text-3xl font-bold mb-6">Contact Us</h1>
       <br/>
-      <form onSubmit={handleSubmit} className='flex flex-col justify-center items-center md:items-start'>
+      <form onSubmit={handleSubmit} className='flex flex-col justify-center items-center'>
         <label className="block mb-2 font-bold">Name</label>
         <input type="text" id="name" name="name" value={name} onChange={handleNameChange} className=" p-2 mb-6  bg-blue-100 rounded-lg border-gray-300" />
 
