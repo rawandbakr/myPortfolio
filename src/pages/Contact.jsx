@@ -5,8 +5,8 @@ import emailjs from '@emailjs/browser';
 
 
 const Contact = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+  const [user_name, setName] = useState('');
+  const [user_email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
 
@@ -49,10 +49,10 @@ const Contact = () => {
       <br/>
       <form onSubmit={sendEmail} ref={form} className='flex flex-col justify-center items-center'>
         <label className="block mb-2 font-bold">Name</label>
-        <input type="text" id="name" name="user_name" value={name} onChange={handleNameChange} className=" p-2 mb-6  bg-blue-100 rounded-lg border-gray-300" />
+        <input type="text" id="name" name="user_name" value={user_name} onChange={handleNameChange} className=" p-2 mb-6  bg-blue-100 rounded-lg border-gray-300" />
 
         <label className="block mb-2 font-bold">Email</label>
-        <input type="email" id="email" name="user_email" value={email} onChange={handleEmailChange} className=" p-2 mb-6 bg-blue-100 rounded-lg border-gray-300" />
+        <input type="email" id="email" name="user_email" value={user_email} onChange={handleEmailChange} className=" p-2 mb-6 bg-blue-100 rounded-lg border-gray-300" />
 
         <label htmlFor="message" className="block mb-2 font-bold">Message</label>
         <textarea id="message" name="message" value={message} onChange={handleMessageChange} className=" p-2 mb-6 bg-blue-100 rounded-lg border-gray-300"></textarea>
