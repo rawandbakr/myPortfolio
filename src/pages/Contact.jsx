@@ -34,11 +34,10 @@ setMessage('')
     e.preventDefault();
     const myPromise=emailjs.sendForm('service_ojqj4xs', 'template_mj09859', form.current, 'HXP9fXNePn3YgPP8h')
     toast.promise(myPromise, {
-      loading: 'Sending.......' ,
-      success:'Got the email',
-      error: 'Error when sending',
+      loading: 'Sending message . .' ,
+      success:'Got the message',
+      error: 'Error while sending message',
     });
-
     if(myPromise)
     setDataToNull();
   };
@@ -56,7 +55,7 @@ setMessage('')
         <label htmlFor="message" className="block mb-2 font-bold">Message</label>
         <textarea  name="message" value={message} onChange={handleMessageChange} className=" p-2 mb-6 bg-blue-100 rounded-lg border-gray-300"></textarea>
 
-        <button type="submit"  className="bg-black text-white py-2 px-4 rounded hover:bg-gray-800">Submit</button>
+        <button type="submit" className="bg-black text-white py-2 px-4 rounded hover:bg-gray-800">Submit</button>
         <Toaster
         position="top-center"
         reverseOrder={false}

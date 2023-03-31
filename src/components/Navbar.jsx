@@ -11,18 +11,18 @@ export default function Navbar() {
       {/* social links and header section  */}
       <div className=" flex space-x-2 ">
         {/* social links section */}
-        <div className="flex flex-col space-y-2 justify-center items-center w-auto">
+        <div className="flex flex-col space-y-2 justify-center items-center w-auto ">
           <a href='https://github.com/rawandbakr'>
-            <FiGithub />
+            <FiGithub className='hover:stroke-cyan-300'/>
           </a>
           <a href='https://www.linkedin.com/in/rawand-abubakr/'>
-            <FiLinkedin />
+            <FiLinkedin className='hover:stroke-cyan-300' />
           </a>
         </div>
         {/* icon and name section  */}
-        <div className="flex justify-start p-3 items-center space-x-1 " onClick={()=>window.scrollTo(0, 0)} >
+        <div className="flex justify-start p-3 items-center space-x-1" onClick={()=>window.scrollTo(0, 0)} >
           <img src={rawand} className="rounded-full h-12" alt="." />
-          <h1 className="font-bold text-xl">
+          <h1 className="font-bold text-xl first-letter ">
             Rawand A.Ali
             <p className="flex text-xs">web developer</p>
           </h1>
@@ -30,25 +30,25 @@ export default function Navbar() {
       </div>
       {/* links section on desktop */}
       <div className="md:flex justify-end items-center space-x-3 hidden">
-        <a className='p-2 rounded-lg' href="">ABOUT</a>
-        <a className='p-2 rounded-lg' href="">SKILLS</a>
-        <a className='p-2 rounded-lg' href="">CONTACT</a>
+        <a className='p-2 rounded-lg hover:text-cyan-300' href="">ABOUT</a>
+        <a className='p-2 rounded-lg hover:text-cyan-300' href="">SKILLS</a>
+        <a className='p-2 rounded-lg hover:text-cyan-300' href="">CONTACT</a>
       </div>
       {/* links section on desktop */}
       <div className="md:hidden flex justify-end items-center ">
         {toggle ?
-          <TfiClose size={30} onClick={() => setToggle(false)} />
+          <TfiClose size={40} className='hover:fill-orange-300' onClick={() => setToggle(false)} />
         :
-          <FiMenu size={30} onClick={() => setToggle(true)} />
+          <FiMenu size={40} className='hover:stroke-cyan-300' onClick={() => setToggle(true)} />
         }
         {toggle ?
           <div
             className="absolute top-[110px] right-2 h-auto w-28 p-5 flex z-10 rounded-md  text-white bg-bgHero bg-cover"
             onClick={() => setToggle(false)}>
-            <div className="flex flex-col space-y-3 ">
-              <a href="">ABOUT</a>
-              <a href="">SKILLS</a>
-              <a href="">CONTACT</a>
+            <div className="flex flex-col space-y-3">
+              <a href="" className=' hover:text-cyan-300'>ABOUT</a>
+              <a href="" className=' hover:text-cyan-300'>SKILLS</a>
+              <a href="" className=' hover:text-cyan-300'>CONTACT</a>
             </div>
           </div>
          :
