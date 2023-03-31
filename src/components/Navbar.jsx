@@ -13,19 +13,21 @@ export default function Navbar() {
         {/* social links section */}
         <div className="flex flex-col space-y-2 justify-center items-center w-auto ">
           <a href='https://github.com/rawandbakr'>
-            <FiGithub className='hover:stroke-cyan-300'/>
+            <FiGithub size={30} className='hover:stroke-cyan-300'/>
           </a>
           <a href='https://www.linkedin.com/in/rawand-abubakr/'>
-            <FiLinkedin className='hover:stroke-cyan-300' />
+            <FiLinkedin size={30} className='hover:stroke-cyan-300' />
           </a>
         </div>
         {/* icon and name section  */}
         <div className="flex justify-start p-3 items-center space-x-1" onClick={()=>window.scrollTo(0, 0)} >
-          <img src={rawand} className="rounded-full h-12" alt="." />
-          <h1 className="font-bold text-xl first-letter ">
+          <img src={rawand} className="rounded-full h-12 cursor-pointer" alt="." />
+          <span>
+          <h1 className="font-bold text-xl first-letter cursor-pointer">
             Rawand A.Ali
-            <p className="flex text-xs">web developer</p>
           </h1>
+          <p className="flex text-xs  cursor-pointer">web developer</p>
+          </span>
         </div>
       </div>
       {/* links section on desktop */}
