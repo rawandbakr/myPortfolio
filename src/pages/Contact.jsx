@@ -2,6 +2,7 @@
 import React, { useState ,useRef} from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import emailjs from '@emailjs/browser';
+import { Result } from 'postcss';
 
 
 const Contact = () => {
@@ -21,22 +22,25 @@ const Contact = () => {
   const handleMessageChange = (event) => {
     setMessage(event.target.value);
   };
+  const setDataToNull=(()=>{
+setEmail('')
+setName('')
+setMessage('')
+  })
 
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
+    const myPromise=emailjs.sendForm('service_ojqj4xs', 'template_mj09859', form.current, 'HXP9fXNePn3YgPP8h')
+    toast.promise(myPromise, {
+      loading: 'Sending.......' ,
+      success:'Got the email',
+      error: 'Error when sending',
+    });
 
-    emailjs.sendForm('service_ojqj4xs', 'template_mj09859', form.current, 'HXP9fXNePn3YgPP8h')
-      .then((result) => {
-          console.log(result.text)
-          toast.success('We will contact you asap.');
-          setEmail('')
-          setMessage('')
-          setName('')
-      }, (error) => {
-          console.log(error.text);
-      });
+    if(myPromise)
+    setDataToNull();
   };
   return (
     <div className='max-h-max w-full p-5 flex flex-col text-black'>
@@ -54,7 +58,7 @@ const Contact = () => {
 
         <button type="submit"  className="bg-black text-white py-2 px-4 rounded hover:bg-gray-800">Submit</button>
         <Toaster
-        position="bottom-left"
+        position="top-center"
         reverseOrder={false}
       />
       </form>
