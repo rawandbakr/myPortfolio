@@ -9,8 +9,8 @@ export default function Skills() {
       <div className='p-2'>
           <h3 className=' font-bold text-3xl'>Skills</h3>
           <br/>
-          <div className='flex flex-row justify-center items-center'>
-              <DiJava color='black' size={75} title='java'/>
+          <div className='flex flex-row justify-center items-center space-x-2'>
+              <DiJava color='black' size={75}/>
               <DiReact color='black' size={75}/>
               <DiMongodb color='black' size={75}/>
               <MdHtml color='black' size={75}/>

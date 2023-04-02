@@ -47,15 +47,15 @@ setMessage('')
       <br/>
       <form ref={form} onSubmit={sendEmail} className='flex flex-col justify-center items-center'>
         <label className="block mb-2 font-bold">Name</label>
-        <input type="text"  name="user_name"  value={name} onChange={handleNameChange}  className=" p-2 mb-6  bg-blue-100 rounded-lg border-gray-300" />
+        <input type="text"  name="user_name"  value={name} required onChange={handleNameChange}  className=" p-2 mb-6  bg-blue-100 rounded-lg border-gray-300" />
 
         <label className="block mb-2 font-bold">Email</label>
-        <input type="email"  name="user_email" value={email} onChange={handleEmailChange}  className=" p-2 mb-6 bg-blue-100 rounded-lg border-gray-300" />
+        <input type="email"  name="user_email" value={email} required onChange={handleEmailChange}  className=" p-2 mb-6 bg-blue-100 rounded-lg border-gray-300" />
 
         <label htmlFor="message" className="block mb-2 font-bold">Message</label>
-        <textarea  name="message" value={message} onChange={handleMessageChange} className=" p-2 mb-6 bg-blue-100 rounded-lg border-gray-300"></textarea>
+        <textarea  name="message" value={message} required onChange={handleMessageChange} className=" p-2 mb-6 bg-blue-100 rounded-lg border-gray-300"></textarea>
 
-        <button type="submit" className="bg-black text-white py-2 px-4 rounded hover:bg-cyan-900 ">Submit</button>
+        <button type="submit" className="bg-black text-white py-2 px-4 rounded hover:bg-cyan-900">Submit</button>
         <Toaster
         position="top-center"
         reverseOrder={false}
