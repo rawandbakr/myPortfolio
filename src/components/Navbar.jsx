@@ -48,9 +48,9 @@ export default function Navbar() {
             className="absolute top-[110px] right-2 h-auto w-28 p-5 flex z-10 rounded-md  text-white bg-bgHero bg-cover"
             onClick={() => setToggle(false)}>
             <div className="flex flex-col space-y-3">
-              <a href="" className=' hover:text-cyan-300'>ABOUT</a>
-              <a href="" className=' hover:text-cyan-300'>SKILLS</a>
-              <a href="" className=' hover:text-cyan-300'>CONTACT</a>
+              <a href="#about" className=' hover:text-cyan-300'>ABOUT</a>
+              <a href="#skills" className=' hover:text-cyan-300'>SKILLS</a>
+              <a href="#contact" className=' hover:text-cyan-300'>CONTACT</a>
             </div>
           </div>
          :
