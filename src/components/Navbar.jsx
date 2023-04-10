@@ -20,7 +20,7 @@ export default function Navbar() {
           </a>
         </div>
         {/* icon and name section  */}
-        <div className="flex justify-start p-3 items-center space-x-1" onClick={()=>window.scrollTo(0, 0)} >
+        <div className="flex justify-start p-3 items-center space-x-1 scroll-smooth" onClick={()=>window.scrollTo(0, 0)} >
           <img src={rawand} className="rounded-full h-12 cursor-pointer" alt="." />
           <span>
           <h1 className="font-bold text-xl first-letter cursor-pointer">
@@ -32,9 +32,9 @@ export default function Navbar() {
       </div>
       {/* links section on desktop */}
       <div className="md:flex justify-end items-center space-x-3 hidden">
-        <a className='p-2 rounded-lg hover:text-cyan-300' href="">ABOUT</a>
-        <a className='p-2 rounded-lg hover:text-cyan-300' href="">SKILLS</a>
-        <a className='p-2 rounded-lg hover:text-cyan-300' href="">CONTACT</a>
+        <a className='p-2 rounded-lg hover:text-cyan-300' href="#about">ABOUT</a>
+        <a className='p-2 rounded-lg hover:text-cyan-300' href="#skills">SKILLS</a>
+        <a className='p-2 rounded-lg hover:text-cyan-300' href="#contact">CONTACT</a>
       </div>
       {/* links section on desktop */}
       <div className="md:hidden flex justify-end items-center ">

@@ -2,7 +2,7 @@ import {BiUserCircle} from 'react-icons/bi'
 
 export default function About() {
   return (
-    <div className='max-h-max w-full p-4  text-black'>
+    <div id="about" className='max-h-max w-full p-4  text-black'>
       <h1 className="flex items-center text-4xl font-bold mb-6">
         Welcome to my portfolio website!</h1>
       <p className="mb-4">My name is Rawand, and I am a web application developer based in Sulaymaniyah.</p>
