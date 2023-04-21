@@ -3,6 +3,7 @@ import {FiMenu} from 'react-icons/fi'
 import {TfiClose} from 'react-icons/tfi'
 import {FiGithub,FiLinkedin} from 'react-icons/fi'
 import { useState } from 'react'
+import {motion} from 'framer-motion'
 export default function Navbar() {
 
   const [toggle,setToggle]=useState(false)
@@ -44,17 +45,21 @@ export default function Navbar() {
           <FiMenu size={40} className='hover:stroke-cyan-300' onClick={() => setToggle(true)} />
         }
         {toggle ?
-          <div
+          <motion.div
             className="absolute top-[110px] right-2 h-auto w-28 p-5 flex z-10 rounded-md  text-white bg-bgHero bg-cover"
-            onClick={() => setToggle(false)}>
+            onClick={() =>setToggle(false)}
+            initial={{x:'100vw'}}
+            animate={{x:0}}
+            transition={{type:'spring',stiffness:120 }}
+            >
             <div className="flex flex-col space-y-3">
-              <a href="#about" className=' hover:text-cyan-300'>ABOUT</a>
-              <a href="#skills" className=' hover:text-cyan-300'>SKILLS</a>
-              <a href="#contact" className=' hover:text-cyan-300'>CONTACT</a>
+              <motion.a whileHover={{scale:1.2,originX:0}} transition={{type:'spring',stiffness:500}} href="#about" className=' hover:text-cyan-300'>ABOUT</motion.a>
+              <motion.a whileHover={{scale:1.2,originX:0}} transition={{type:'spring',stiffness:500}} href="#skills" className=' hover:text-cyan-300'>SKILLS</motion.a>
+              <motion.a whileHover={{scale:1.2,originX:0}} transition={{type:'spring',stiffness:500}} href="#contact" className=' hover:text-cyan-300'>CONTACT</motion.a>
             </div>
-          </div>
+          </motion.div>
          :
-          <></>
+         <></>
         }
       </div>
     </div>

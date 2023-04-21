@@ -1,8 +1,9 @@
 import {DiJava,DiReact,DiMongodb,DiHtml5,DiCss3,DiNodejs,DiJavascript,DiGit,DiMysql} from 'react-icons/di'
 import {SiRedux,SiExpress,SiTailwindcss} from 'react-icons/si'
 import {MdHtml,MdCss,MdJavascript}from 'react-icons/md'
+import {motion} from 'framer-motion'
+
 export default function Skills() {
-  const iconsStyle=""
   return (
     <div id="skills" className='max-h-max w-full flex flex-col p-2'>
       {/* skills  */}
