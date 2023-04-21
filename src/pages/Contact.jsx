@@ -2,7 +2,6 @@
 import React, { useState ,useRef} from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import emailjs from '@emailjs/browser';
-import { Result } from 'postcss';
 
 
 const Contact = () => {
@@ -23,9 +22,9 @@ const Contact = () => {
     setMessage(event.target.value);
   };
   const setDataToNull=(()=>{
-setEmail('')
-setName('')
-setMessage('')
+    setEmail('')
+    setName('')
+    setMessage('')
   })
 
   const form = useRef();
