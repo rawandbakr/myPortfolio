@@ -7,6 +7,7 @@ import {motion} from 'framer-motion'
 export default function Navbar() {
 
   const [toggle,setToggle]=useState(false)
+  const links=['about' ,'skills','contact']
   return (
     <div className="z-0 sticky top-0 flex justify-around w-full h-[100px]  text-white backdrop-filter backdrop-blur-sm bg-opacity-50 bg-black">
       {/* social links and header section  */}
@@ -33,9 +34,12 @@ export default function Navbar() {
       </div>
       {/* links section on desktop */}
       <div className="md:flex justify-end items-center space-x-3 hidden">
-        <a className='p-2 rounded-lg hover:text-cyan-300' href="#about">ABOUT</a>
+        {links.map(link=>
+        <a className='p-2 rounded-lg hover:text-cyan-300' href={'#'.concat(link)}>{link}</a>
+        )}
+        {/* <a className='p-2 rounded-lg hover:text-cyan-300' href="#about">ABOUT</a>
         <a className='p-2 rounded-lg hover:text-cyan-300' href="#skills">SKILLS</a>
-        <a className='p-2 rounded-lg hover:text-cyan-300' href="#contact">CONTACT</a>
+        <a className='p-2 rounded-lg hover:text-cyan-300' href="#contact">CONTACT</a> */}
       </div>
       {/* links section on desktop */}
       <div className="md:hidden flex justify-end items-center ">
@@ -53,9 +57,13 @@ export default function Navbar() {
             transition={{type:'spring'}}
             >
             <div className="flex flex-col space-y-3">
-              <motion.a whileHover={{scale:1.2,originX:0}} transition={{type:'spring',stiffness:500}} href="#about" className=' hover:text-cyan-300'>ABOUT</motion.a>
+            {links.map(link=>
+        <motion.a whileHover={{scale:1.2,originX:0}} transition={{type:'spring',stiffness:500}} href={'#'.concat(link)} className=' hover:text-cyan-300'>{link}</motion.a>
+        )}
+              {/* <motion.a whileHover={{scale:1.2,originX:0}} transition={{type:'spring',stiffness:500}} href="#about" className=' hover:text-cyan-300'>ABOUT</motion.a>
               <motion.a whileHover={{scale:1.2,originX:0}} transition={{type:'spring',stiffness:500}} href="#skills" className=' hover:text-cyan-300'>SKILLS</motion.a>
               <motion.a whileHover={{scale:1.2,originX:0}} transition={{type:'spring',stiffness:500}} href="#contact" className=' hover:text-cyan-300'>CONTACT</motion.a>
+            */}
             </div>
           </motion.div>
          :
@@ -67,9 +75,13 @@ export default function Navbar() {
             transition={{type:'spring'}}
             >
             <div className="flex flex-col space-y-3">
-              <motion.a whileHover={{scale:1.2,originX:0}} transition={{type:'spring',stiffness:500}} href="#about" className=' hover:text-cyan-300'>ABOUT</motion.a>
+            {links.map(link=>
+        <motion.a whileHover={{scale:1.2,originX:0}} transition={{type:'spring',stiffness:500}} href={'#'.concat(link)} className=' hover:text-cyan-300'>{link}</motion.a>
+        )}
+              {/* <motion.a whileHover={{scale:1.2,originX:0}} transition={{type:'spring',stiffness:500}} href="#about" className=' hover:text-cyan-300'>ABOUT</motion.a>
               <motion.a whileHover={{scale:1.2,originX:0}} transition={{type:'spring',stiffness:500}} href="#skills" className=' hover:text-cyan-300'>SKILLS</motion.a>
               <motion.a whileHover={{scale:1.2,originX:0}} transition={{type:'spring',stiffness:500}} href="#contact" className=' hover:text-cyan-300'>CONTACT</motion.a>
+            */}
             </div>
           </motion.div>
         }
