@@ -48,7 +48,7 @@ export default function Navbar() {
           <motion.div
             className="absolute top-[110px] right-2 h-auto w-28 p-5 flex z-10 rounded-md  text-white bg-bgHero bg-cover"
             onClick={() =>setToggle(false)}
-            initial={{x:'50vw',opacity:0}}
+            initial={{x:'-100vw',opacity:0}}
             animate={{x:0,opacity:1}}
             transition={{type:'spring'}}
             >
@@ -59,7 +59,19 @@ export default function Navbar() {
             </div>
           </motion.div>
          :
-         <></>
+         <motion.div
+            className="absolute top-[110px] right-2 h-auto w-28 p-5 flex z-10 rounded-md  text-white bg-bgHero bg-cover"
+            onClick={() =>setToggle(false)}
+            initial={{x:0,opacity:1}}
+            animate={{x:'-100vw',opacity:0}}
+            transition={{type:'spring'}}
+            >
+            <div className="flex flex-col space-y-3">
+              <motion.a whileHover={{scale:1.2,originX:0}} transition={{type:'spring',stiffness:500}} href="#about" className=' hover:text-cyan-300'>ABOUT</motion.a>
+              <motion.a whileHover={{scale:1.2,originX:0}} transition={{type:'spring',stiffness:500}} href="#skills" className=' hover:text-cyan-300'>SKILLS</motion.a>
+              <motion.a whileHover={{scale:1.2,originX:0}} transition={{type:'spring',stiffness:500}} href="#contact" className=' hover:text-cyan-300'>CONTACT</motion.a>
+            </div>
+          </motion.div>
         }
       </div>
     </div>
