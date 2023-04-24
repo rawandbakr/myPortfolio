@@ -41,7 +41,7 @@ const Contact = () => {
     setDataToNull();
   };
   return (
-    <div id="contact" className='max-h-max w-full p-5 flex flex-col text-black'>
+    <div id="CONTACT" className='max-h-max w-full p-5 flex flex-col text-black'>
       <h1 className="text-3xl font-bold mb-6">Contact Us</h1>
       <br/>
       <form ref={form} onSubmit={sendEmail} className='flex flex-col justify-center items-center'>

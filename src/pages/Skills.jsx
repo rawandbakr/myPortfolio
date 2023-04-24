@@ -5,7 +5,7 @@ import {motion} from 'framer-motion'
 
 export default function Skills() {
   return (
-    <div id="skills" className='max-h-max w-full flex flex-col p-2'>
+    <div id="SKILLS" className='max-h-max w-full flex flex-col p-2'>
       {/* skills  */}
       <div className='p-2'>
           <h3 className=' font-bold text-3xl'>Skills</h3>

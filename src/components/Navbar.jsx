@@ -7,7 +7,7 @@ import {motion} from 'framer-motion'
 export default function Navbar() {
 
   const [toggle,setToggle]=useState(false)
-  const links=['about' ,'skills','contact']
+  const links=['ABOUT' ,'SKILLS','CONTACT']
   return (
     <div className="z-0 sticky top-0 flex justify-around w-full h-[100px]  text-white backdrop-filter backdrop-blur-sm bg-opacity-50 bg-black">
       {/* social links and header section  */}
