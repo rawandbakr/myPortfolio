@@ -6,16 +6,27 @@ import Contact from './pages/Contact'
 import Hero from './pages/Hero'
 import Skills from './pages/Skills'
 
+
 function App() {
 
+  var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("header").style.top = "0";
+  } else {
+    document.getElementById("header").style.top = "-100px";
+  }
+  prevScrollpos = currentScrollPos;
+}
   return (
     <div className='flex flex-col'>
-        <header className='sticky top-0'><Navbar/></header>
+        <header id='header' className='sticky top-0'><Navbar/></header>
         <Hero/>
         <About/>
         <Skills/>
         <Contact/>
-       <footer> <Footer/></footer>
+        <Footer/>
     </div>
   )
 }
