@@ -24,6 +24,8 @@ export default function Hero() {
          I create visually appealing websites using the latest technologies to exceed my clients' expectations.
          Let's work together to bring your ideas to life!
         </p>
+        <br/>
+        <button className='bg-black text-white backdrop-blur opacity-50 hover:text-cyan-300 hover:opacity-100 rounded-md w-1/4 p-1 font-extrabold self-center md:self-auto'>Call for action</button>
       </div>
      
     </div>
