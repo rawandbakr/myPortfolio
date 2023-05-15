@@ -64,7 +64,7 @@ export default function Navbar() {
         <div className="flex flex-row justify-right items-center self-right rounded">
           <CiLight
             size={37}
-            onClick={() => toggleDarkMode()}
+            onClick={toggleDarkMode}
             color={darkMode ? "black" : "yellow"}
           />
         </div>
