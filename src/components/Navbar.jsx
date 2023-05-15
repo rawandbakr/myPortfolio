@@ -1,16 +1,16 @@
-import rawand from '../assets/rawandPhoto.jpg'
-import {FiMenu} from 'react-icons/fi'
-import {TfiClose} from 'react-icons/tfi'
-import {FiGithub,FiLinkedin} from 'react-icons/fi'
-import { useState,useContext } from 'react'
-import {motion} from 'framer-motion'
-import {CiLight} from 'react-icons/ci'
-import { DarkModeContext } from '../context/DarkModeContext'
+import rawand from "../assets/rawandPhoto.jpg";
+import { FiMenu } from "react-icons/fi";
+import { TfiClose } from "react-icons/tfi";
+import { FiGithub, FiLinkedin } from "react-icons/fi";
+import { useState, useContext } from "react";
+import { motion } from "framer-motion";
+import { CiLight } from "react-icons/ci";
+import { DarkModeContext } from "../context/DarkModeContext";
 
 export default function Navbar() {
-  const {darkMode,toggleDarkMode} = useContext(DarkModeContext);
-  const [toggle,setToggle]=useState(false)
-  const links=[
+  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
+  const [toggle, setToggle] = useState(false);
+  const links = [
     {
       id: "about",
       title: "About",
@@ -24,77 +24,118 @@ export default function Navbar() {
       title: "Contact",
     },
   ];
-  
+
   return (
-    <div className={`z-0 sticky top-0 flex justify-around w-full h-[100px]  backdrop-filter backdrop-blur-sm bg-opacity-50 text-white ${darkMode ?`bg-cyan-100 bg-opacity-10 `:` bg-black`}`}>
+    <div
+      className={`z-0 sticky top-0 flex justify-around w-full h-[100px]  backdrop-filter backdrop-blur-sm bg-opacity-50 text-white ${
+        darkMode ? `bg-cyan-100 bg-opacity-10 ` : ` bg-black`
+      }`}>
       {/* social links and header section  */}
       <div className=" flex space-x-2 ">
         {/* social links section */}
         <div className="flex flex-col space-y-2 justify-center items-center w-auto ">
-          <a href='https://github.com/rawandbakr'>
-            <FiGithub size={30} className='hover:stroke-cyan-300'/>
+          <a href="https://github.com/rawandbakr">
+            <FiGithub size={30} className="hover:stroke-cyan-300" />
           </a>
-          <a href='https://www.linkedin.com/in/rawand-abubakr/'>
-            <FiLinkedin size={30} className='hover:stroke-cyan-300' />
+          <a href="https://www.linkedin.com/in/rawand-abubakr/">
+            <FiLinkedin size={30} className="hover:stroke-cyan-300" />
           </a>
         </div>
         {/* icon and name section  */}
-        <div className="flex justify-start p-3 items-center space-x-1 scroll-smooth" onClick={()=>window.scrollTo(0, 0)} >
-          <img src={rawand} className="rounded-full h-12 cursor-pointer" alt="." />
+        <div
+          className="flex justify-start p-3 items-center space-x-1 scroll-smooth"
+          onClick={() => window.scrollTo(0, 0)}>
+          <img
+            src={rawand}
+            className="rounded-full h-12 cursor-pointer"
+            alt="."
+          />
           <span>
-          <h1 className="font-bold text-xl first-letter cursor-pointer">
-            Rawand A.Ali
-          </h1>
-          <p className="flex text-xs  cursor-pointer">web developer</p>
+            <h1 className="font-bold text-xl first-letter cursor-pointer">
+              Rawand A.Ali
+            </h1>
+            <p className="flex text-xs  cursor-pointer">web developer</p>
           </span>
         </div>
       </div>
-      {/* theme control */}
-      <div className='flex flex-row justify-center items-center self-center rounded'>
-      <CiLight size={37} onClick={()=>toggleDarkMode()} color={darkMode?"cyan":"yellow"}/>
-      </div>
-      {/* links section on desktop */}
-      <div className="md:flex justify-end items-center space-x-3 hidden">
-        {links.map((link)=>
-        <a key={link.id} className='p-2 rounded-lg hover:text-cyan-300' href={`#${link.id}`}>{link.title}</a>
-        )}
-      </div>
-      {/* links section on mobile */}
-      <div className="md:hidden flex justify-end items-center ">
-        {toggle ?
-          <TfiClose size={40} className='hover:fill-orange-300' onClick={() => setToggle(false)} />
-        :
-          <FiMenu size={40} className='hover:stroke-cyan-300' onClick={() => setToggle(true)} />
-        }
-        {toggle ?
-          <motion.div
-            className="absolute top-[110px] right-2 h-auto w-28 p-5 flex z-10 rounded-md  text-white bg-bgHero bg-cover"
-            onClick={() =>setToggle(false)}
-            initial={{x:'-100vw',opacity:0}}
-            animate={{x:0,opacity:1}}
-            transition={{type:'spring'}}
-            >
-            <div className="flex flex-col space-y-3">
-            {links.map(link=>
-        <motion.a key={link.id} whileHover={{scale:1.2,originX:0}} transition={{type:'spring',stiffness:500}} href={'#'.concat(link.id)} className=' hover:text-cyan-300'>{link.title}</motion.a>
-        )}
-            </div>
-          </motion.div>
-         :
-         <motion.div
-            className="absolute top-[110px] right-2 h-auto w-28 p-5 flex z-10 rounded-md  text-white bg-bgHero bg-cover"
-            onClick={() =>setToggle(false)}
-            initial={{x:0,opacity:1}}
-            animate={{x:'-100vw',opacity:0}}
-            transition={{type:'spring'}}
-            >
-            <div className="flex flex-col space-y-3">
-            {links.map(link=>
-        <motion.a key={link.id} whileHover={{scale:1.2,originX:0}} transition={{type:'spring',stiffness:500}} href={'#'.concat(link.id)} className=' hover:text-cyan-300'>{link.title}</motion.a>
-        )}
-            </div>
-          </motion.div>
-        }
+      {/* theme and navbar linkes */}
+      <div className="flex flex-row justify-end gap-2">
+        {/* theme control */}
+        <div className="flex flex-row justify-right items-center self-right rounded">
+          <CiLight
+            size={37}
+            onClick={() => toggleDarkMode()}
+            color={darkMode ? "black" : "yellow"}
+          />
+        </div>
+        {/* links section on desktop */}
+        <div className="md:flex justify-end items-center space-x-3 hidden">
+          {links.map((link) => (
+            <a
+              key={link.id}
+              className="p-2 rounded-lg hover:text-cyan-300"
+              href={`#${link.id}`}>
+              {link.title}
+            </a>
+          ))}
+        </div>
+        {/* links section on mobile */}
+        <div className="md:hidden flex justify-end items-center ">
+          {toggle ? (
+            <TfiClose
+              size={40}
+              className="hover:fill-orange-300"
+              onClick={() => setToggle(false)}
+            />
+          ) : (
+            <FiMenu
+              size={40}
+              className="hover:stroke-cyan-300"
+              onClick={() => setToggle(true)}
+            />
+          )}
+          {toggle ? (
+            <motion.div
+              className="absolute top-[110px] right-2 h-auto w-28 p-5 flex z-10 rounded-md  text-white bg-bgHero bg-cover"
+              onClick={() => setToggle(false)}
+              initial={{ x: "-100vw", opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ type: "spring" }}>
+              <div className="flex flex-col space-y-3">
+                {links.map((link) => (
+                  <motion.a
+                    key={link.id}
+                    whileHover={{ scale: 1.2, originX: 0 }}
+                    transition={{ type: "spring", stiffness: 500 }}
+                    href={"#".concat(link.id)}
+                    className=" hover:text-cyan-300">
+                    {link.title}
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
+          ) : (
+            <motion.div
+              className="absolute top-[110px] right-2 h-auto w-28 p-5 flex z-10 rounded-md  text-white bg-bgHero bg-cover"
+              onClick={() => setToggle(false)}
+              initial={{ x: 0, opacity: 1 }}
+              animate={{ x: "-100vw", opacity: 0 }}
+              transition={{ type: "spring" }}>
+              <div className="flex flex-col space-y-3">
+                {links.map((link) => (
+                  <motion.a
+                    key={link.id}
+                    whileHover={{ scale: 1.2, originX: 0 }}
+                    transition={{ type: "spring", stiffness: 500 }}
+                    href={"#".concat(link.id)}
+                    className=" hover:text-cyan-300">
+                    {link.title}
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </div>
       </div>
     </div>
   );
