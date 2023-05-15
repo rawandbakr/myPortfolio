@@ -1,10 +1,14 @@
 
-import React, { useState ,useRef} from 'react';
+import React, { useState ,useRef,useContext} from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import emailjs from '@emailjs/browser';
+import { DarkModeContext } from '../context/DarkModeContext'
+
 
 
 const Contact = () => {
+  const {darkMode} = useContext(DarkModeContext);
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -41,7 +45,7 @@ const Contact = () => {
     setDataToNull();
   };
   return (
-    <div id="contact" className='max-h-max w-full p-5 flex flex-col text-black'>
+    <div id="contact" className='max-h-max w-full p-5 flex flex-col'>
       <h1 className="text-3xl font-bold mb-6">Contact Us</h1>
       <br/>
       <form ref={form} onSubmit={sendEmail} className='flex flex-col justify-center items-center'>
@@ -54,7 +58,7 @@ const Contact = () => {
         <label htmlFor="message" className="block mb-2 font-bold">Message</label>
         <textarea  name="message" value={message} required onChange={handleMessageChange} className=" p-2 mb-6 bg-blue-100 rounded-lg border-gray-300"></textarea>
 
-        <button type="submit" className="bg-black text-white py-2 px-4 rounded hover:bg-cyan-900">Submit</button>
+        <button type="submit" className={` py-2 px-4 rounded hover:bg-cyan-900 ${darkMode?`bg-white text-black`:`bg-black text-white`}`}>Submit</button>
         <Toaster
         position="top-center"
         reverseOrder={false}

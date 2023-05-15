@@ -11,18 +11,18 @@ export default function Skills() {
           <h3 className=' font-bold text-3xl'>Skills</h3>
           <br/>
           <div className='flex flex-wrap justify-center items-center'>
-              <DiJava color='black' size={75}/>
-              <DiReact color='black' size={75}/>
-              <DiMongodb color='black' size={75}/>
-              <MdHtml color='black' size={75}/>
-              <MdCss color='black' size={75}/>
-              <DiNodejs color='black' size={75}/>
-              <MdJavascript color='black' size={75}/>
-              <SiRedux color='black' size={75}/>
-              <DiGit color='black' size={75}/>
-              <DiMysql color='black' size={75}/>
-              <SiExpress color='black' size={75}/>
-              <SiTailwindcss color='black' size={75}/>
+              <DiJava  size={75}/>
+              <DiReact  size={75}/>
+              <DiMongodb  size={75}/>
+              <MdHtml  size={75}/>
+              <MdCss  size={75}/>
+              <DiNodejs  size={75}/>
+              <MdJavascript  size={75}/>
+              <SiRedux  size={75}/>
+              <DiGit  size={75}/>
+              <DiMysql  size={75}/>
+              <SiExpress  size={75}/>
+              <SiTailwindcss size={75}/>
           </div>
 
       </div>

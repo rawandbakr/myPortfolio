@@ -2,10 +2,13 @@ import rawand from '../assets/rawandPhoto.jpg'
 import {FiMenu} from 'react-icons/fi'
 import {TfiClose} from 'react-icons/tfi'
 import {FiGithub,FiLinkedin} from 'react-icons/fi'
-import { useState } from 'react'
+import { useState,useContext } from 'react'
 import {motion} from 'framer-motion'
-export default function Navbar() {
+import {CiLight} from 'react-icons/ci'
+import { DarkModeContext } from '../context/DarkModeContext'
 
+export default function Navbar() {
+  const {darkMode,toggleDarkMode} = useContext(DarkModeContext);
   const [toggle,setToggle]=useState(false)
   const links=[
     {
@@ -23,7 +26,7 @@ export default function Navbar() {
   ];
   
   return (
-    <div className="z-0 sticky top-0 flex justify-around w-full h-[100px]  text-white backdrop-filter backdrop-blur-sm bg-opacity-50 bg-black">
+    <div className={`z-0 sticky top-0 flex justify-around w-full h-[100px]  backdrop-filter backdrop-blur-sm bg-opacity-50 text-white ${darkMode ?`bg-cyan-100 bg-opacity-10 `:` bg-black`}`}>
       {/* social links and header section  */}
       <div className=" flex space-x-2 ">
         {/* social links section */}
@@ -46,16 +49,17 @@ export default function Navbar() {
           </span>
         </div>
       </div>
+      {/* theme control */}
+      <div className='flex flex-row justify-center items-center self-center rounded'>
+      <CiLight size={37} onClick={()=>toggleDarkMode()} color={darkMode?"cyan":"yellow"}/>
+      </div>
       {/* links section on desktop */}
       <div className="md:flex justify-end items-center space-x-3 hidden">
         {links.map((link)=>
         <a key={link.id} className='p-2 rounded-lg hover:text-cyan-300' href={`#${link.id}`}>{link.title}</a>
         )}
-        {/* <a className='p-2 rounded-lg hover:text-cyan-300' href="#about">ABOUT</a>
-        <a className='p-2 rounded-lg hover:text-cyan-300' href="#skills">SKILLS</a>
-        <a className='p-2 rounded-lg hover:text-cyan-300' href="#contact">CONTACT</a> */}
       </div>
-      {/* links section on desktop */}
+      {/* links section on mobile */}
       <div className="md:hidden flex justify-end items-center ">
         {toggle ?
           <TfiClose size={40} className='hover:fill-orange-300' onClick={() => setToggle(false)} />
@@ -74,10 +78,6 @@ export default function Navbar() {
             {links.map(link=>
         <motion.a key={link.id} whileHover={{scale:1.2,originX:0}} transition={{type:'spring',stiffness:500}} href={'#'.concat(link.id)} className=' hover:text-cyan-300'>{link.title}</motion.a>
         )}
-              {/* <motion.a whileHover={{scale:1.2,originX:0}} transition={{type:'spring',stiffness:500}} href="#about" className=' hover:text-cyan-300'>ABOUT</motion.a>
-              <motion.a whileHover={{scale:1.2,originX:0}} transition={{type:'spring',stiffness:500}} href="#skills" className=' hover:text-cyan-300'>SKILLS</motion.a>
-              <motion.a whileHover={{scale:1.2,originX:0}} transition={{type:'spring',stiffness:500}} href="#contact" className=' hover:text-cyan-300'>CONTACT</motion.a>
-            */}
             </div>
           </motion.div>
          :
@@ -92,10 +92,6 @@ export default function Navbar() {
             {links.map(link=>
         <motion.a key={link.id} whileHover={{scale:1.2,originX:0}} transition={{type:'spring',stiffness:500}} href={'#'.concat(link.id)} className=' hover:text-cyan-300'>{link.title}</motion.a>
         )}
-              {/* <motion.a whileHover={{scale:1.2,originX:0}} transition={{type:'spring',stiffness:500}} href="#about" className=' hover:text-cyan-300'>ABOUT</motion.a>
-              <motion.a whileHover={{scale:1.2,originX:0}} transition={{type:'spring',stiffness:500}} href="#skills" className=' hover:text-cyan-300'>SKILLS</motion.a>
-              <motion.a whileHover={{scale:1.2,originX:0}} transition={{type:'spring',stiffness:500}} href="#contact" className=' hover:text-cyan-300'>CONTACT</motion.a>
-            */}
             </div>
           </motion.div>
         }

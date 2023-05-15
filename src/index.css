@@ -5,3 +5,15 @@
 html {
     scroll-behavior: smooth;
   }
+Container{
+  flex: auto;
+  flex-direction: column;
+}
+.Container-dark{
+    background-color:rgba(0, 0, 0, 0.912);
+    color: white;
+  }
+.Container-light{
+    background-color: white;
+    color: black;
+  }
