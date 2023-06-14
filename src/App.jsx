@@ -7,6 +7,8 @@ import Hero from "./pages/Hero";
 import Skills from "./pages/Skills";
 import { DarkModeContext } from './context/DarkModeContext'
 
+
+
 function App() {
   const {darkMode} = useContext(DarkModeContext)
   var prevScrollpos = window.pageYOffset;

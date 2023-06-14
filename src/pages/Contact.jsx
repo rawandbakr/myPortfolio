@@ -32,10 +32,9 @@ const Contact = () => {
   })
 
   const form = useRef();
-
   const sendEmail = (e) => {
     e.preventDefault();
-    const myPromise=emailjs.sendForm('service_ojqj4xs', 'template_mj09859', form.current, 'HXP9fXNePn3YgPP8h')
+    const myPromise=emailjs.sendForm(`${import.meta.env.VITE_SERV}`, `${import.meta.env.VITE_TEMP}`, form.current, `${import.meta.env.VITE_KEY}`)
     toast.promise(myPromise, {
       loading: 'Sending message . .' ,
       success:'Got the message',
