@@ -33,8 +33,8 @@ export default function Navbar() {
 
   return (
     <div
-      className={`z-0 sticky top-0 flex justify-around w-full h-[100px]  backdrop-filter backdrop-blur-sm bg-opacity-50 text-white ${
-        darkMode ? `bg-cyan-100 bg-opacity-10 ` : ` bg-black`
+      className={`z-0 sticky top-0 flex justify-around w-full h-[100px]  backdrop-filter backdrop-blur-sm bg-opacity-50 ${
+        darkMode ? `bg-opacity-50 bg-cyan-900` : ` bg-black text-white`
       }`}>
       {/*1 social links and header section  */}
       <div className=" flex space-x-2 ">
@@ -60,7 +60,7 @@ export default function Navbar() {
             <h1 className="font-bold text-xl first-letter cursor-pointer">
               Rawand A.Ali
             </h1>
-            <p className="flex text-xs  cursor-pointer">web developer</p>
+            <p className="text-xs flex cursor-pointer">web developer</p>
           </span>
         </div>
       </div>
@@ -143,7 +143,10 @@ export default function Navbar() {
           </motion.div>
         )}
       </div>
-            <motion.div className="fixed top-[100px] left-0 right-0 h-2  bg-cyan-300 origin-left" style={{ scaleX }} />
+      <motion.div 
+      className="fixed top-[100px] left-0 right-0 h-1 
+       bg-cyan-300 origin-left
+        " style={{ scaleX }} />
     </div>
   );
 }

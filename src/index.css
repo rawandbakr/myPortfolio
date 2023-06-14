@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 html {
-    scroll-behavior: smooth;
-  }
+  
+  @apply scrollbar-none scroll-smooth	
+}
 Container{
   flex: auto;
   flex-direction: column;

@@ -7,5 +7,6 @@ module.exports = {
       "bgHero":"URL('https://images.pexels.com/photos/1169754/pexels-photo-1169754.jpeg')"
     }
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar')({ nocompatible: true }),],
 }
