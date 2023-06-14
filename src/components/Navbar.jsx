@@ -143,7 +143,7 @@ export default function Navbar() {
           </motion.div>
         )}
       </div>
-            <motion.div className=" fixed top-16 left-0 right-0 h-2 bg-cyan-500 origin-left" style={{ scaleX }} />
+            <motion.div className="fixed top-[100px] left-0 right-0 h-2  bg-cyan-300 origin-left" style={{ scaleX }} />
     </div>
   );
 }
