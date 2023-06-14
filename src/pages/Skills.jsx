@@ -1,24 +1,33 @@
 import {DiJava,DiReact,DiMongodb,DiHtml5,DiCss3,DiNodejs,DiJavascript,DiGit,DiMysql} from 'react-icons/di'
 import {SiRedux,SiExpress,SiTailwindcss} from 'react-icons/si'
 import {MdHtml,MdCss,MdJavascript}from 'react-icons/md'
-import {motion, spring} from 'framer-motion'
-import { useInView } from 'react-intersection-observer';
+import {motion} from 'framer-motion'
 
 
 export default function Skills() {
-  const { ref, inView} = useInView();
-
+  const container = {
+  hidden: { opacity: 0 ,x:-100 },
+  show: {
+    opacity: 1,
+    x:0,
+    transition:{
+      delay:0.4,
+      type: "spring",
+      stiffness: 1000,
+    }
+  }
+}
   return (
     <div id="skills" className='max-h-max w-full flex flex-col p-2'>
       {/* skills  */}
-      <div className='p-2'
-          ref={ref}>
+      <div className='p-2'>
           <h3 className=' font-bold text-3xl'>Skills</h3>
           <br/>
-        {inView?<motion.div
-          initial={{ x: "-100vw", opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ type: "spring" }}
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
           className='flex flex-wrap justify-center items-center'>
               <DiJava  size={75}/>
               <DiReact  size={75}/>
@@ -32,8 +41,7 @@ export default function Skills() {
               <DiMysql  size={75}/>
               <SiExpress  size={75}/>
               <SiTailwindcss size={75}/>
-          </motion.div>:<></>}
-          
+          </motion.div>
 
       </div>
       {/* experiences */}
