@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <div className={`max-h-max w-full flex flex-col md:flex-row justify-between items-center space-x-2 space-y-2 p-5`}>
        {/* hero section left section */}
-       <div className='flex rounded-md justify-center items-center'>
+       <div className='flex flex-col rounded-md justify-center items-center'>
         <motion.img
         drag
         dragConstraints={{

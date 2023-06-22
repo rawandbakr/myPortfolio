@@ -11,8 +11,8 @@ export default function Navbar() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
+    damping: 100,
+    restDelta: 0.005
   });
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
   const [toggle, setToggle] = useState(false);
@@ -144,8 +144,8 @@ export default function Navbar() {
         )}
       </div>
       <motion.div 
-      className="fixed top-[100px] left-0 right-0 h-1 
-       bg-cyan-300 origin-left
+      className="fixed top-[100px] left-0 right-0 h-2 
+        bg-purple-600 origin-left
         " style={{ scaleX }} />
     </div>
   );
