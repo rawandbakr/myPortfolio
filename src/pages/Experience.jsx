@@ -28,7 +28,7 @@ export default function Experience() {
           },
       ];
   return (
-    <div id="Experience" className='max-h-max w-full flex flex-col p-2'>
+    <div id="experience" className='max-h-max w-full flex flex-col p-2'>
       {/* Experience  */}
           <h3 className=' font-bold text-3xl'>Experience</h3>
           
