@@ -11,8 +11,9 @@ export default function Projects(props) {
         <h1 className=" font-medium mt-3">{props.title}</h1>
         {/* short discription of the project */}
         <div className="flex flex-col">
-          <p className="mt-3 p-1">
+          <p className="mt-3 p-1 h-20">
           {props.info}
+          
           </p>
           <div className="flex flex-row items-center gap-2">
             <AiOutlineFieldTime />
