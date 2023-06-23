@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Hero from "./pages/Hero";
 import Skills from "./pages/Skills";
+import Experience from './pages/experience';
 import { DarkModeContext } from './context/DarkModeContext'
 
 
@@ -31,6 +32,7 @@ function App() {
       <Hero />
       <About />
       <Skills />
+      <Experience/>
       <Contact />
       <Footer />
     </div>

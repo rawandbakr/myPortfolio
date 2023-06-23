@@ -20,7 +20,6 @@ export default function Skills() {
   return (
     <div id="skills" className='max-h-max w-full flex flex-col p-2'>
       {/* skills  */}
-      <div className='p-2'>
           <h3 className=' font-bold text-3xl'>Skills</h3>
           <br/>
         <motion.div
@@ -28,7 +27,7 @@ export default function Skills() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className='flex flex-wrap justify-center items-center'>
+          className='flex flex-wrap justify-center items-center gap-2'>
               <DiJava  size={75}/>
               <DiReact  size={75}/>
               <DiMongodb  size={75}/>
@@ -42,12 +41,6 @@ export default function Skills() {
               <SiExpress  size={75}/>
               <SiTailwindcss size={75}/>
           </motion.div>
-
-      </div>
-      {/* experiences */}
-      <div>
-
-      </div>
     </div>
   )
 }
