@@ -26,7 +26,7 @@ export default function Navbar() {
       title: "Skills",
     },
     {
-      id: "Experience",
+      id: "experience",
       title: "Experience",
     },
     {
