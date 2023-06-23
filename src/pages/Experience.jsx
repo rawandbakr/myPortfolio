@@ -32,7 +32,7 @@ export default function Experience() {
       {/* Experience  */}
           <h3 className=' font-bold text-3xl'>Experience</h3>
           
-          <div className=" grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+          <div className=" grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
             {Projectss.map((project)=>(
                    <Projects key={project.id} title={project.title} github={project.github} live={project.live} date={project.date} info={project.info}/>
           ))}
