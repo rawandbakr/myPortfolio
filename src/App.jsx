@@ -5,7 +5,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Hero from "./pages/Hero";
 import Skills from "./pages/Skills";
-import Experience from './pages/Experience';
+import Experience from "./pages/Exp";
+
 import { DarkModeContext } from './context/DarkModeContext'
 
 
