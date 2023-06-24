@@ -6,6 +6,7 @@ import { useState, useContext } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { CiLight } from "react-icons/ci";
 import { DarkModeContext } from "../context/DarkModeContext";
+import {BsFillMoonFill} from "react-icons/bs"
 
 export default function Navbar() {
   const { scrollYProgress } = useScroll();
@@ -15,7 +16,7 @@ export default function Navbar() {
     restDelta: 0.005
   });
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
-  const [toggle, setToggle] = useState(true);
+  const [toggle, setToggle] = useState(false);
   const links = [
     {
       id: "about",
@@ -72,11 +73,18 @@ export default function Navbar() {
       <div className="flex flex-row justify-end gap-2">
         {/* theme control */}
         <div className="flex flex-row justify-right items-center self-right rounded">
-          <CiLight
+          {darkMode?
+          <BsFillMoonFill
+          size={37}
+          onClick={toggleDarkMode}
+          color={"#9CFFF1"}/>
+        :
+        <CiLight
             size={37}
             onClick={toggleDarkMode}
-            color={darkMode ? "black" : "yellow"}
+            color={"yellow"}
           />
+        }
         </div>
         {/* links section on desktop */}
         <div className="md:flex justify-end items-center space-x-3 hidden">
