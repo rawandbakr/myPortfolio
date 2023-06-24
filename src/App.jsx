@@ -27,7 +27,7 @@ function App() {
   return (
     <div className={`
     ${darkMode?`Container Container-dark`:`Container Container-light`}`}>
-      <header id="header" className="sticky top-0">
+      <header id="header" className="sticky top-0 z-10">
         <Navbar />
       </header>
       <Hero />

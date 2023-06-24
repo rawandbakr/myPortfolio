@@ -15,7 +15,7 @@ export default function Navbar() {
     restDelta: 0.005
   });
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(true);
   const links = [
     {
       id: "about",

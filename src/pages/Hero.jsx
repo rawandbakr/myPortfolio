@@ -32,7 +32,7 @@ export default function Hero() {
         <p 
         className='flex font-serif font-bold'>
          a web developer based in Sulaymaniyah.
-         I create visually appealing websites using the latest technologies to exceed my clients' expectations.
+         I create visually appealing websites using the latest technologie to exceed my clients' expectations.
          Let's work together to bring your ideas to life!
         </p>
       </div>
