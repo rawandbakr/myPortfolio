@@ -19,7 +19,7 @@ export default function Experience() {
             date: "30-Jan-2023",
           },
           {
-            id: 1,
+            id: 3,
             title: "todo",
             github: "https://github.com/rawandbakr/todo",
             live: "https://rawandtodo.netlify.app/",
@@ -30,7 +30,7 @@ export default function Experience() {
   return (
     <div id="experience" className='max-h-max w-full flex flex-col p-2'>
       {/* Experience  */}
-          <h3 className=' font-bold text-3xl'>Experience</h3>
+          <h3 className='font-bold text-3xl'>Experience</h3>
           
           <div className=" grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 place-items-center pt-2">
             {Projectss.map((project)=>(

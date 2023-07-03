@@ -25,4 +25,4 @@ export function Model(props) {
   )
 }
 
-useGLTF.preload('/model.glb')
+useGLTF.preload('/rawand.glb')

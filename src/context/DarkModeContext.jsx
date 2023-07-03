@@ -4,7 +4,7 @@ const DarkModeContext=createContext();
 
 
  function DarkModeProvider(props) {
-  const[darkMode ,setDarkMode] =useState(true);
+  const[darkMode ,setDarkMode] =useState(false);
   const toggleDarkMode = ()=>{
     setDarkMode(!darkMode);
   }
