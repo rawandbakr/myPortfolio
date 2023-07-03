@@ -1,6 +1,7 @@
 import React from 'react'
 import hero from '../assets/laptop cat.png'
 import {motion} from 'framer-motion'
+import Cha from './Cha'
 
 
 export default function Hero() {
@@ -9,7 +10,7 @@ export default function Hero() {
     <div className={`max-h-max w-full flex flex-col md:flex-row justify-between items-center space-x-2 space-y-2 p-5`}>
        {/* hero section left section */}
        <div className='flex flex-col rounded-md justify-center items-center'>
-        <motion.img
+        {/* <motion.img
         drag
         dragConstraints={{
           top: -50,
@@ -20,7 +21,8 @@ export default function Hero() {
         src={hero}
         className="w-[400px] md:w-auto"
         alt="."
-        />
+        /> */}
+        <Cha/>
       </div>
       {/* hero section text right */}
       <div 
