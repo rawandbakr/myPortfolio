@@ -74,15 +74,15 @@ export default function Navbar() {
         {/* theme control */}
         <div className="flex flex-row justify-right items-center self-right rounded">
           {darkMode?
-          <BsFillMoonFill
+          <CiLight
           size={37}
           onClick={toggleDarkMode}
-          color={"#9CFFF1"}/>
+          color={"yellow"}/>
         :
-        <CiLight
+        <BsFillMoonFill
             size={37}
             onClick={toggleDarkMode}
-            color={"yellow"}
+            color={"#9CFFF1"}
           />
         }
         </div>
