@@ -9,7 +9,7 @@ export default function Cha() {
          camera={{ position: [2, 0, 12.25], fov: 12 }}
          style={{
             // backgroundColor: '#111a21',
-            width: '50vw',
+            width: '75vw',
             height: '100vh',
          }}
       >
