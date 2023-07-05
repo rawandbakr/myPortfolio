@@ -7,9 +7,9 @@ export default function Cha() {
    
    return (
       <Canvas
-         camera={{ position: [1, 0, 12.25], fov: 15 }}
+         camera={{ position: [0,15, 10], fov:8}}
          style={{
-            width: '75vh',
+            width: '60vw',
             height: '100vh',
          }}
          
@@ -18,9 +18,9 @@ export default function Cha() {
          <ambientLight intensity={0.1} />
          <directionalLight intensity={0.4} />
          <Suspense fallback={null}>
-            <Model position={[0.05, -1, 0]} />
+            <Model position={[0, -1,0]} />
          </Suspense>
-         <OrbitControls />
+         <OrbitControls autoRotate={'true'} />
       </Canvas>
    );
 }
