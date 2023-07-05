@@ -1,12 +1,12 @@
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import { Model } from '../../Model.jsx';
+import { Model } from '../../public/Model.jsx'
 
 export default function Cha() {
    return (
       <Canvas
-         camera={{ position: [2, 0, 12.25], fov: 10 }}
+         camera={{ position: [2, 0, 12.25], fov: 12 }}
          style={{
             // backgroundColor: '#111a21',
             width: '50vw',

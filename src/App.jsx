@@ -8,6 +8,7 @@ import Skills from "./pages/Skills";
 import Experience from "./pages/Exp";
 
 import { DarkModeContext } from './context/DarkModeContext'
+import Cha from './pages/Cha';
 
 
 
