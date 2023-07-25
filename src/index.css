@@ -3,18 +3,17 @@
 @tailwind utilities;
 
 html {
-  
-  @apply scrollbar-none scroll-smooth	
+  @apply scroll-smooth;
 }
-Container{
+Container {
   flex: auto;
   flex-direction: column;
 }
-.Container-dark{
-    background-color:rgba(0, 0, 0, 0.912);
-    color: white;
-  }
-.Container-light{
-    background-color: white;
-    color: black;
-  }
+.Container-dark {
+  background-color: rgba(0, 0, 0, 0.912);
+  color: white;
+}
+.Container-light {
+  background-color: white;
+  color: black;
+}

@@ -120,7 +120,7 @@ export default function Navbar() {
             h-auto bg-opacity-50 backdrop-blur-lg backdrop-filter 
             ${toggle ? `w-28` : `w-0`}
             ${darkMode ? `bg-cyan-800 bg-opacity-50` : ` bg-black  text-white`}
-            flex rounded-md p-5 text-white backdrop-blur`}
+            flex rounded-md bg-bgHero bg-cover p-5 text-white backdrop-blur`}
             onClick={() => setToggle(false)}
             initial={{ x: 0, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -141,26 +141,27 @@ export default function Navbar() {
             </div>
           </motion.div>
         ) : (
-          // <motion.div
-          //   className={`absolute top-[110px] right-2 h-auto w-28 p-5 flex z-10 rounded-md  text-white bg-bgHero bg-cover`}
-          //   onClick={() => setToggle(false)}
-          //   initial={{ x: 0, opacity: 1 }}
-          //   animate={{ x: "-100vw", opacity: 0 }}
-          //   transition={{ type: "spring" }}>
-          //   <div className="flex flex-col space-y-3">
-          //     {links.map((link) => (
-          //       <motion.a
-          //         key={link.id}
-          //         whileHover={{ scale: 1.2, originX: 0 }}
-          //         transition={{ type: "spring", stiffness: 500 }}
-          //         href={"#".concat(link.id)}
-          //         className=" hover:text-cyan-300">
-          //         {link.title}
-          //       </motion.a>
-          //     ))}
-          //   </div>
-          // </motion.div>
-          <></>
+          <motion.div
+            className={`absolute top-[110px] right-2 z-10 flex h-auto w-28 rounded-md bg-bgHero  bg-cover p-5 text-white`}
+            onClick={() => setToggle(false)}
+            initial={{ x: 0, opacity: 1 }}
+            animate={{ x: "-100vw", opacity: 0 }}
+            transition={{ type: "spring" }}
+          >
+            <div className="flex flex-col space-y-3">
+              {links.map((link) => (
+                <motion.a
+                  key={link.id}
+                  whileHover={{ scale: 1.2, originX: 0 }}
+                  transition={{ type: "spring", stiffness: 500 }}
+                  href={"#".concat(link.id)}
+                  className=" hover:text-cyan-300"
+                >
+                  {link.title}
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
         )}
       </div>
       {/* 4 progrees bar */}
