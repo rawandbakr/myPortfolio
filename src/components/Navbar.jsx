@@ -80,7 +80,7 @@ export default function Navbar() {
             <BsFillMoonFill
               size={37}
               onClick={toggleDarkMode}
-              color={"black"}
+              color={"white"}
             />
           )}
         </div>
