@@ -46,8 +46,8 @@ const Contact = () => {
 
   const style=`p-2 mb-6  rounded-lg ${darkMode?`bg-white text-black`:`bg-black text-white`}`;
   return (
-    <div id="contact" className='max-h-max w-full p-5 flex flex-col'>
-      <h1 className="text-3xl font-bold mb-6">Contact Us</h1>
+    <div id="contact" className='max-h-max w-full p-2 flex flex-col'>
+      <h1 className="text-3xl font-bold mb-6">Contact</h1>
       <br/>
       <form ref={form} onSubmit={sendEmail} className='flex flex-col justify-center items-center'>
         <label className="block mb-2 font-bold">Name</label>

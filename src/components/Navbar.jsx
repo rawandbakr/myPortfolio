@@ -6,14 +6,14 @@ import { useState, useContext } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { CiLight } from "react-icons/ci";
 import { DarkModeContext } from "../context/DarkModeContext";
-import {BsFillMoonFill} from "react-icons/bs"
+import { BsFillMoonFill } from "react-icons/bs";
 
 export default function Navbar() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 100,
-    restDelta: 0.005
+    restDelta: 0.005,
   });
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
   const [toggle, setToggle] = useState(false);
@@ -38,13 +38,13 @@ export default function Navbar() {
 
   return (
     <div
-      className={`z-0 sticky top-0 flex justify-around w-full h-[100px]  backdrop-filter backdrop-blur-sm bg-opacity-50 ${
-        darkMode ? `bg-opacity-50 bg-cyan-900` : ` bg-black text-white`
-      }`}>
+      className={`sticky top-0 z-0 flex h-[100px] w-full justify-around  bg-opacity-50 backdrop-blur-sm backdrop-filter 
+      ${darkMode ? `bg-cyan-900 bg-opacity-50` : ` bg-black text-white`}`}
+    >
       {/*1 social links and header section  */}
       <div className=" flex space-x-2 ">
         {/* social links section */}
-        <div className="flex flex-col space-y-2 justify-center items-center w-auto ">
+        <div className="flex w-auto flex-col items-center justify-center space-y-2 ">
           <a href="https://github.com/rawandbakr">
             <FiGithub size={30} className="hover:stroke-cyan-300" />
           </a>
@@ -54,52 +54,51 @@ export default function Navbar() {
         </div>
         {/* icon and name section  */}
         <div
-          className="flex justify-start p-3 items-center space-x-1 scroll-smooth"
-          onClick={() => window.scrollTo(0, 0)}>
+          className="flex items-center justify-start space-x-1 scroll-smooth p-3"
+          onClick={() => window.scrollTo(0, 0)}
+        >
           <img
             src={rawand}
-            className="rounded-full h-12 cursor-pointer"
+            className="h-12 cursor-pointer rounded-full"
             alt="."
           />
           <span>
-            <h1 className="font-bold text-xl first-letter cursor-pointer">
+            <h1 className="first-letter cursor-pointer text-xl font-bold">
               Rawand A.Ali
             </h1>
-            <p className="text-xs flex cursor-pointer">web developer</p>
+            <p className="flex cursor-pointer text-xs">web developer</p>
           </span>
         </div>
       </div>
       {/*2 theme and navbar linkes */}
       <div className="flex flex-row justify-end gap-2">
         {/* theme control */}
-        <div className="flex flex-row justify-right items-center self-right rounded">
-          {darkMode?
-          <CiLight
-          size={37}
-          onClick={toggleDarkMode}
-          color={"yellow"}/>
-        :
-        <BsFillMoonFill
-            size={37}
-            onClick={toggleDarkMode}
-            color={"#9CFFF1"}
-          />
-        }
+        <div className="justify-right self-right flex flex-row items-center rounded">
+          {darkMode ? (
+            <CiLight size={37} onClick={toggleDarkMode} color={"white"} />
+          ) : (
+            <BsFillMoonFill
+              size={37}
+              onClick={toggleDarkMode}
+              color={"black"}
+            />
+          )}
         </div>
         {/* links section on desktop */}
-        <div className="md:flex justify-end items-center space-x-3 hidden">
+        <div className="hidden items-center justify-end space-x-3 md:flex">
           {links.map((link) => (
             <a
               key={link.id}
-              className="p-2 rounded-lg hover:text-cyan-300"
-              href={`#${link.id}`}>
+              className="rounded-lg p-2 hover:text-cyan-300"
+              href={`#${link.id}`}
+            >
               {link.title}
             </a>
           ))}
         </div>
       </div>
       {/*3 links section on mobile */}
-      <div className="md:hidden flex justify-end items-center ">
+      <div className="flex items-center justify-end md:hidden ">
         {toggle ? (
           <TfiClose
             size={40}
@@ -115,11 +114,18 @@ export default function Navbar() {
         )}
         {toggle ? (
           <motion.div
-            className="absolute top-[110px] right-2 h-auto w-28 p-5 flex z-10 rounded-md  text-white bg-bgHero bg-cover"
+            className={`
+             absolute
+            top-[110px] right-0
+            h-auto bg-opacity-50 backdrop-blur-lg backdrop-filter 
+            ${toggle ? `w-28` : `w-0`}
+            ${darkMode ? `bg-cyan-800 bg-opacity-50` : ` bg-black  text-white`}
+            flex rounded-md p-5 text-white backdrop-blur`}
             onClick={() => setToggle(false)}
-            initial={{ x: "-100vw", opacity: 0 }}
+            initial={{ x: 0, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ type: "spring" }}>
+            transition={{ type: "spring" }}
+          >
             <div className="flex flex-col space-y-3">
               {links.map((link) => (
                 <motion.a
@@ -127,37 +133,42 @@ export default function Navbar() {
                   whileHover={{ scale: 1.2, originX: 0 }}
                   transition={{ type: "spring", stiffness: 500 }}
                   href={"#".concat(link.id)}
-                  className=" hover:text-cyan-300">
+                  className=" hover:text-cyan-300"
+                >
                   {link.title}
                 </motion.a>
               ))}
             </div>
           </motion.div>
         ) : (
-          <motion.div
-            className="absolute top-[110px] right-2 h-auto w-28 p-5 flex z-10 rounded-md  text-white bg-bgHero bg-cover"
-            onClick={() => setToggle(false)}
-            initial={{ x: 0, opacity: 1 }}
-            animate={{ x: "-100vw", opacity: 0 }}
-            transition={{ type: "spring" }}>
-            <div className="flex flex-col space-y-3">
-              {links.map((link) => (
-                <motion.a
-                  key={link.id}
-                  whileHover={{ scale: 1.2, originX: 0 }}
-                  transition={{ type: "spring", stiffness: 500 }}
-                  href={"#".concat(link.id)}
-                  className=" hover:text-cyan-300">
-                  {link.title}
-                </motion.a>
-              ))}
-            </div>
-          </motion.div>
+          // <motion.div
+          //   className={`absolute top-[110px] right-2 h-auto w-28 p-5 flex z-10 rounded-md  text-white bg-bgHero bg-cover`}
+          //   onClick={() => setToggle(false)}
+          //   initial={{ x: 0, opacity: 1 }}
+          //   animate={{ x: "-100vw", opacity: 0 }}
+          //   transition={{ type: "spring" }}>
+          //   <div className="flex flex-col space-y-3">
+          //     {links.map((link) => (
+          //       <motion.a
+          //         key={link.id}
+          //         whileHover={{ scale: 1.2, originX: 0 }}
+          //         transition={{ type: "spring", stiffness: 500 }}
+          //         href={"#".concat(link.id)}
+          //         className=" hover:text-cyan-300">
+          //         {link.title}
+          //       </motion.a>
+          //     ))}
+          //   </div>
+          // </motion.div>
+          <></>
         )}
       </div>
-      <motion.div 
-      className="fixed top-[100px] left-0 right-0 h-2 origin-left bg-cyan-400
-        " style={{ scaleX }} />
+      {/* 4 progrees bar */}
+      <motion.div
+        className="fixed top-[100px] left-0 right-0 h-2 origin-left bg-cyan-400
+        "
+        style={{ scaleX }}
+      />
     </div>
   );
 }
