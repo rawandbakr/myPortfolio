@@ -7,11 +7,11 @@ import CanvasLoader from "../components/Loader.jsx";
 export default function Cha() {
   return (
     <Canvas
-      camera={{ position: [0, 15, 10], fov: 7 }}
+      camera={{ position: [0, 15, 10], fov: 8 }}
       style={{
-        width: "550px",
-        height: "100vh",
-      }}
+        width: "490px",
+        height: "100vh"
+            }}
       gl={{ preserveDrawingBuffer: true }}
     >
       <ambientLight intensity={1.25} />
